@@ -8,3 +8,17 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ip='curl --silent checkip.dyndns.org | grep --extended-regexp --only-matching "[0-9\.]+"'
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+alias be='bundle exec'
+alias run='be foreman run'
+alias tree='open -a SourceTree'
+alias up='git-up'
+alias cs='brew cask search'
+alias ci='brew cask install'
+
+# chore
+alias brewski='mas outdated; mas upgrade; brew update; brew upgrade; brew cleanup; brew cask cleanup; brew doctor; brew cu'
+
+# work
+alias gc='cd ~/Work/coaches-app'
+alias ccc='gc; run rails c'
+alias sd='gc; docker-machine start; docker-compose up -d; fish'
