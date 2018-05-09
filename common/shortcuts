@@ -15,6 +15,18 @@ alias up='git-up'
 alias cs='brew cask search'
 alias ci='brew cask install'
 
+# docker
+alias dm='docker-machine'
+alias dms='dm start'
+alias dmp='dm stop'
+alias dmst='dm status'
+alias do='docker-compose'
+alias dos='do start'
+alias dop='do stop'
+alias dod='do down'
+alias dou='do up'
+alias dost='do status'
+
 # chore
 alias brewski='mas outdated; mas upgrade; brew update; brew upgrade; brew cleanup; brew cask cleanup; brew doctor; brew cu'
 
