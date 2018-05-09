@@ -31,6 +31,8 @@ alias dost='do status'
 alias brewski='mas outdated; mas upgrade; brew update; brew upgrade; brew cleanup; brew cask cleanup; brew doctor; brew cu'
 
 # work
+alias sspec='spring rspec'
+alias robo='be rubocop'
 alias gc='cd ~/Work/coaches-app'
 alias ccc='gc; run rails c'
 alias sd='gc; docker-machine start; docker-compose up -d; fish'
