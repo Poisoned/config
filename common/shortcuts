@@ -12,7 +12,17 @@ alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias be='bundle exec'
 alias run='be foreman run'
 alias tree='open -a SourceTree'
+alias config='subl ~/.config'
+alias ag='ag --hidden'
+alias edit_config='subl ~/.config/'
+alias show_shortcuts='cat ~/.config/common/shortcuts'
+
+# git
 alias up='git-up'
+alias clean="git branch --merged master | grep -v '^\*\|  master' | xargs -n 1 git branch -d"
+alias cleanup='up; clean'
+
+# brew
 alias cs='brew cask search'
 alias ci='brew cask install'
 
@@ -28,12 +38,23 @@ alias dod='do down'
 alias dou='do up'
 alias dost='do status'
 
+# vagrant / homestead
+alias gh='cd ~/Homestead'
+alias vup="gh; vagrant up"
+alias vh="gh; vagrant halt"
+alias vrl="gh; vagrant reload"
+alias vssh="gh; vagrant ssh"
+alias vst="gh; vagrant status"
+
 # chore
-alias brewski='mas outdated; mas upgrade; brew update; brew upgrade; brew cleanup; brew cask cleanup; brew doctor; brew cu'
+alias brewski='mas outdated; mas upgrade; brew update; brew upgrade; fisher up; brew cleanup; brew doctor; brew cu'
 
 # work
+alias ss='spring stop'
 alias sspec='spring rspec'
 alias robo='be rubocop'
+
+# coaches app
 alias gc='cd ~/Work/coaches-app'
 alias ccc='gc; run rails c'
 alias sd='gc; docker-machine start; docker-compose up -d; fish'
