@@ -53,8 +53,21 @@ alias brewski='mas outdated; mas upgrade; brew update; brew upgrade; fisher up; 
 alias ss='spring stop'
 alias sspec='spring rspec'
 alias robo='be rubocop'
+alias sshprod='ssh app-deploy@coaches-1.app.ams1.xing.com'
+alias sshprev='ssh app-deploy@coaches-1.app.preview.ams1.xing.com'
 
 # coaches app
 alias gc='cd ~/Work/coaches-app'
+alias gf='cd ~/Work/coaches-frontend'
 alias ccc='gc; run rails c'
 alias sd='gc; docker-machine start; docker-compose up -d; fish'
+
+# expertmatch app
+alias ge='cd ~/Work/expertmatch-fe'
+
+# hallofreelancer app
+alias ghf='cd ~/Work/hffm-frontend/'
+alias ghb='cd ~/Work/hffm-backend/'
+alias ghs='cd ~/Work/hffm-socket-server/'
+alias vhallo='gh; vup'
+

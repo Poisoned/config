@@ -1,0 +1,5 @@
+function start_hallofreelancer_manager
+  start_hallofreelancer_backend
+  start_hallofreelancer_socket
+  start_hallofreelancer_frontend
+end
