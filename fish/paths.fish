@@ -2,11 +2,11 @@
 set -gx PATH /usr/local/bin $PATH
 set -gx PATH /usr/local/sbin $PATH
 
-# npm
-set -gx PATH /usr/local/share/npm/bin $PATH
-
 # nvm
 set -gx NVM_DIR ~/.nvm
+
+# node
+set -gx PATH $NVM_DIR/versions/node/v10.12.0/bin $PATH
 
 # load oly
 set -gx PATH ~/.oly/bin $PATH
