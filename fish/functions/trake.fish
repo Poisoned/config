@@ -1,4 +1,4 @@
 function trake
     set -lx RAILS_ENV test
-    rake $argv
+    bundle exec rake $argv
 end
