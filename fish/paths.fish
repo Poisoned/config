@@ -3,7 +3,11 @@ set -gx PATH /usr/local/bin $PATH
 set -gx PATH /usr/local/sbin $PATH
 
 # npm
-# set -gx PATH /usr/local/share/npm/bin $PATH
+set -gx PATH /usr/local/share/npm/bin $PATH
+
+# nvm
+set -gx NVM_DIR ~/.nvm
+
 # load oly
 set -gx PATH ~/.oly/bin $PATH
 # xing olympus-tools
