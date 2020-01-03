@@ -1,7 +1,7 @@
 function tschüss
-  cd ~/Work/coaches-app
-  echo 'Stopping docker containers...'
+  _blue_arrow 'Stopping docker containers...'
   docker-compose stop
-  echo 'Stopping docker machine...'
+
+  _blue_arrow 'Stopping docker machine...'
   docker-machine stop
 end
