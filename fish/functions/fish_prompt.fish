@@ -7,5 +7,5 @@ function fish_prompt
   set -l user "$red$USER"
   set -l cwd $orange(basename (prompt_pwd))
 
-  echo -n -s $user ' '$cwd $white(clean_git_prompt) $white ' '
+  echo -n -s $cwd $white(clean_git_prompt) $white ' '
 end
