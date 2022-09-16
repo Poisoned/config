@@ -1,6 +1,6 @@
 [user]
-  name = Poisoned
-  email = christoph.hugo@xing.com
+	name = Christoph Hugo
+	email = christoph.hugo@omr.com
 [color]
   ui = auto
 [color "branch"]
@@ -18,9 +18,9 @@
   untracked = cyan
 [alias]
   st = status --short --branch
-  ci = commit
-  br = branch
-  co = checkout
+  c = commit
+  b = branch
+  o = checkout
   df = diff
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --no-merges
   lgs = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --no-merges --stat
@@ -29,6 +29,22 @@
 [merge]
   tool = araxis
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/christoph/.gitignore
 [credential]
 	helper = osxkeychain
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/christoph/.stCommitMsg
+[duet "env"]
+	git-author-initials = ch
+	git-author-name = Christoph Hugo
+	git-author-email = christoph.hugo@omr.com
+	mtime = 1614266096
+	git-committer-initials = sf
+	git-committer-name = Sven Fröhlich
+	git-committer-email = sven.froehlich@omr.com
