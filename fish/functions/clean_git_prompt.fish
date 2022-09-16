@@ -22,7 +22,7 @@ set -gx fish_prompt_git_status_unmerged '!'
 set -gx fish_prompt_git_status_order added modified renamed copied deleted untracked unmerged
 
 function clean_git_prompt --description 'Write out the git prompt'
-  set -l branch (git rev-parse --abbrev-ref HEAD ^/dev/null)
+  set -l branch (git rev-parse --abbrev-ref HEAD)
   if test -z $branch
     return
   end
