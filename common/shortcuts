@@ -6,7 +6,7 @@ alias flush='dscacheutil -flushcache'
 alias hack='ping'
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ip='curl ifconfig.co'
+alias ip='curl -4 ifconfig.co'
 alias ipjson='curl --silent ifconfig.co/json | python -m json.tool'
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias be='bundle exec'
@@ -17,42 +17,47 @@ alias edit_config='code ~/.config/'
 alias show_shortcuts='cat ~/.config/common/shortcuts'
 alias unset 'set --erase'
 alias gb='cd -'
+alias http_headers='curl -svo /dev/null'
+alias fastly_debug='curl -svo /dev/null -H "Fastly-Debug:1"'
 
 # duck duck go terminal
 alias d='ddgr'
 
 # git
 alias up='git-up'
-alias clean="git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -d -f"
+# alias clean="git branch --merged | egrep -v '(^\*|master|develop)' | xargs git branch -d"
+alias clean="git removed-branches --prune --force" # https://www.npmjs.com/package/git-removed-branches
 alias cleanup='up; clean'
+alias reset="git reset --hard"
+alias reset_cleanup='reset; cleanup'
 alias branch="git branch | grep \* | cut -d ' ' -f2"
 
 # brew
-alias cs='brew cask search'
-alias ci='brew cask install'
-alias cui='brew cask uninstall'
-alias brewup='brew cask upgrade'
+alias cs='brew search'
+alias ci='brew install --cask'
+alias cui='brew uninstall --cask'
+alias brewup='brew upgrade --cask'
 
 # docker
+alias docker_restart="osascript -e 'quit app \"Docker\"' && open -a Docker"
+alias docker_stop_all='docker stop (docker ps -aq)'
 alias dps='docker ps'
 alias dm='docker-machine'
 alias dms='dm start'
 alias dmp='dm stop'
 alias dmst='dm status'
-alias do='docker-compose'
-alias dos='do start'
-alias dop='do stop'
-alias dod='do down'
-alias dou='do up'
-alias dost='do status'
 
 # docker-compose
 alias c='docker-compose'
-alias cb='docker-compose build'
-alias cup='docker-compose up -d'
-alias cop='docker-compose stop'
-alias cps='docker-compose ps'
-alias clogs='docker-compose logs'
+alias cb='c build'
+alias crs='c restart'
+alias cst='c start'
+alias cop='c stop'
+alias cup='c up -d'
+alias cdo='c down'
+alias cps='c ps'
+alias cstt='c status'
+alias clogs='c logs'
 
 # vagrant / homestead
 alias gohome='cd ~/Homestead'
@@ -88,14 +93,15 @@ alias xb_mysql57='xb_port_forward mysql-5-7 13306:3306'
 alias xb_elasticsearch='xb_port_forward elasticsearch 19200:9200'
 
 # chore
-alias brewski='oly setup update; xingboxctl upgrade; mas outdated; mas upgrade; brew update; brew upgrade; fisher self-update; brew cleanup; brew doctor; brew cu'
+# alias brewski='oly setup update; xingboxctl upgrade; mas outdated; mas upgrade; brew update; brew upgrade; fisher self-update; brew cleanup; brew doctor; brew cu'
+alias brewski='mas outdated; mas upgrade; omf update; omf doctor; brew update; brew upgrade; brew cleanup; brew doctor; brew cu'
 
 # work
 alias ss='spring stop'
 alias sspec='spring rspec'
 alias s='spring rspec'
-alias robo='be rubocop'
-alias r='be rubocop -a'
+alias robo='rubocop'
+alias r='rubocop -a'
 alias gg='robo -aDR; be rspec'
 alias caner='cane --no-style --no-doc'
 
