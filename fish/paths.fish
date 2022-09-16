@@ -17,7 +17,8 @@ set -gx PATH /usr/local/bin $PATH
 set -gx PATH /usr/local/sbin $PATH
 
 # nvm
-set -gx NVM_DIR ~/.nvm
+# set -gx NVM_DIR ~/.nvm
+set -gx NVM_DIR (brew --prefix nvm)
 
 # node
 # set -gx PATH $NVM_DIR/versions/node/v10.12.0/bin $PATH
@@ -31,7 +32,7 @@ set -gx PATH $RBENV_ROOT/bin $PATH
 set -gx PATH $RBENV_ROOT/shims $PATH
 
 # pyenv
-status --is-interactive; and source (pyenv init -|psub)
+# status --is-interactive; and source (pyenv init -|psub)
 
 # Load rbenv automatically by appending
 # the following to ~/.config/fish/config.fish:
@@ -47,20 +48,26 @@ status --is-interactive; and source (pyenv init -|psub)
 # set -gx PATH $GEM_HOME $PATH
 
 # load oly
-set -gx PATH ~/.oly/bin $PATH
+# set -gx PATH ~/.oly/bin $PATH
 
 # docker
-eval (docker-machine env default --no-proxy)
-set -gx DOCKER_IP $NO_PROXY;
+# eval (docker-machine env default --no-proxy)
+# set -gx DOCKER_IP $NO_PROXY;
 
 # editor
 set -gx EDITOR 'code -w'
 
 # xingbox
-set -gx XB_SERVICE 'hallo-matcher'
-set -gx XB_NAME 'megaloh-christoph-hugo'
-set -gx XB_API_KEY '3a899cd6bb6455a60d450226d9c894d8'
+# set -gx XB_SERVICE 'hallo-matcher'
+# set -gx XB_NAME 'megaloh-christoph-hugo'
+# set -gx XB_API_KEY '3a899cd6bb6455a60d450226d9c894d8'
 
 # terraform
 set -gx TF_LOG 'TRACE'
 set -gx TF_LOG_PATH 'terraform.log'
+
+set -gx SSH_PRIVATE_KEY_PATH (cat ~/.ssh/id_rsa)
+
+# gcloud
+# The next line updates PATH for the Google Cloud SDK.
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
