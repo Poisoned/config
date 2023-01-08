@@ -13,3 +13,5 @@ end
 # tabtab source for packages
 # uninstall by removing these lines
 [ -f ~/.config/tabtab/__tabtab.fish ]; and . ~/.config/tabtab/__tabtab.fish; or true
+
+set -gx HOMEBREW_GITHUB_API_TOKEN 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

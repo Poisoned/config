@@ -48,3 +48,7 @@
 	git-committer-initials = sf
 	git-committer-name = Sven Fröhlich
 	git-committer-email = sven.froehlich@omr.com
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
